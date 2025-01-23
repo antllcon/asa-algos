@@ -147,17 +147,6 @@ findSecondShortestPaths(const Graph &graph, const std::string &capital) {
   while (!queue.empty()) {
     auto [currentDist, currentCity, isFirst] = queue.top();
     queue.pop();
-    //
-    // // Пропускаем устаревшие записи
-    // if ((isFirst && currentDist > distances[currentCity].first) ||
-    //     (!isFirst && currentDist > distances[currentCity].second)) {
-    //   continue;
-    // }
-    //
-    // // Если у текущего узла нет соседей, пропускаем
-    // if (graph.find(currentCity) == graph.end()) {
-    //   continue;
-    // }
 
     // Обработка соседей
     for (const auto &edge : graph.at(currentCity)) {
